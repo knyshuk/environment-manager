@@ -1,0 +1,5 @@
+/vendor
+em.phar*
+.travis/phar.pem*
+.travis/deploy.pem*
+.travis/secrets.tar

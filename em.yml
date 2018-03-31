@@ -1,0 +1,12 @@
+project_name: ''
+environments:
+  dev:
+    ssh:
+      user_name: ''
+      host_name: ''
+      port: ''
+      identity_file: ''
+      passphrase: ''
+      password: ''
+      site_root: ''
+

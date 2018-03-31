@@ -1,0 +1,15 @@
+services:
+  em.service.config_manager:
+    class: Em\Service\ConfigManager
+
+  em.command.greet:
+    class: Em\Command\GreetCommand
+    arguments: ['@em.service.config_manager']
+    tags:
+    - { name: console.command, command: greet }
+
+  em.command.some:
+    class: Em\Command\SomeCommand
+    arguments: ['@em.service.config_manager']
+    tags:
+    - { name: console.command, command: some }

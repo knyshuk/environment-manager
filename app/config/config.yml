@@ -1,0 +1,7 @@
+imports:
+  - {resource: parameters.yml}
+  - {resource: services.yml}
+
+parameters:
+  application.name: 'Environment Manager'
+  application.version: '1.0.0'

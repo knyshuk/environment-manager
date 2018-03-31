@@ -1,0 +1,19 @@
+{
+  "name": "knyshuk/environment-manager",
+  "description": "The environment manager for WEB applications which convenient and easy to manage environment access keys. Gives easy access, pull and push your files from/to defined environment (server).",
+  "license": "MIT",
+  "type": "project",
+  "autoload": {
+    "classmap": ["app/Application.php", "app/Kernel.php"],
+    "psr-4": {
+      "Em\\": "src/Em"
+    }
+  },
+  "require": {
+    "php": ">=5.6",
+    "symfony/console": "~3.1",
+    "symfony/config": "~3.1",
+    "symfony/dependency-injection": "~3.1",
+    "symfony/yaml": "~3.1"
+  }
+}

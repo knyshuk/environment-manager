@@ -1,0 +1,26 @@
+sudo: false
+language: php
+cache:
+  directories:
+    - "$HOME/.composer/cache"
+    - vendor
+php:
+  - 7.1
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+before_install:
+  - openssl aes-256-cbc -K $encrypted_cddbab19617a_key -iv $encrypted_cddbab19617a_iv -in .travis/secrets.tar.enc -out .travis/secrets.tar -d
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+install:
+  - travis_retry composer install --no-interaction
+  - composer info -i
+after_success:
+  - if [[ $TRAVIS_TAG ]]; then composer install --no-dev ; fi
+  - if [[ $TRAVIS_TAG ]]; then ./bin/deploy.sh ; fi
+script:
+  - "./vendor/bin/phpunit"
+notifications:
+  email: true
